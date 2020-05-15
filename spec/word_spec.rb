@@ -71,6 +71,12 @@ describe '#Word' do
     end
   end
 
+  describe('.search') do 
+    it("searches through all words and returns the words that match search term") do 
+    expect(Word.search("C")).to(eq([@word, @word1]))
+    end
+  end
+
 end
 
 
