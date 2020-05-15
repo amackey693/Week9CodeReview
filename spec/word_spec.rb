@@ -64,6 +64,12 @@ describe '#Word' do
     end
   end
   
+  describe('#delete') do 
+    it("deletes a word") do 
+     @word.delete()
+     expect(Word.all).to(eq([@word1]))
+    end
+  end
 
 end
 
