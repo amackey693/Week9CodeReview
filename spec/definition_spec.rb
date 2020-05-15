@@ -10,13 +10,13 @@ describe '#Def' do
     Def.clear()
     @word = Word.new({:word => "Cat", :id => nil})
     @word.save()
-    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil, :word_id => @word.id })
+    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil, :word_id => @word.id})
     @def.save()
   end
 
   describe('#initialize')do
     it('creates a hash with attributes')do
-      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :word_id => @word.id, :id => nil })
       expect(def1.definition).to(eq("a definition here"))
     end
   end
@@ -31,7 +31,7 @@ describe '#Def' do
   describe('#save') do
     it("saves a definition")do
      Def.clear()
-     def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+     def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :word_id => @word.id, :id => nil })
      def1.save()
      expect(Def.all).to(eq([def1]))
     end
@@ -90,6 +90,7 @@ describe '#Def' do
 
   describe('#word')do
     it("finds the word a definition belongs to")do
+  
       expect(@def.word()).to(eq(@word))
     end
   end

@@ -56,4 +56,8 @@ class Word
   def self.sort
     Word.all.sort_by{|w| w.word}
   end
+
+  def definitions
+    Def.find_by_album(self.id)
+  end
 end

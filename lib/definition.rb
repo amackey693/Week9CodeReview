@@ -11,7 +11,7 @@ class Def
   def initialize(attributes)
     @definition = attributes.fetch(:definition)
     @author = attributes.fetch(:author)
-    @word_id = @word_id
+    @word_id = attributes.fetch(:word_id)
     @id = attributes.fetch(:id) || @@total_rows += 1
     @timestamp = Time.new()
   end
@@ -58,5 +58,9 @@ class Def
         definitions.push(d)
       end
     end
+  end
+
+  def word
+    Word.find(self.word_id)
   end
 end
