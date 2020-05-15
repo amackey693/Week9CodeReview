@@ -53,6 +53,12 @@ describe '#Word' do
      expect(@word.word).to(eq("Bird"))
     end
   end
+
+  describe('.find') do
+    it("finds a word by id") do
+      expect(Word.find(@word1.id)).to(eq(@word1))
+    end
+  end
   
 
 end
