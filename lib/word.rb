@@ -52,4 +52,8 @@ class Word
     end
     result
   end
+
+  def self.sort
+    Word.all.sort_by{|w| w.word}
+  end
 end
