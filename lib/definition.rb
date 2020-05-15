@@ -15,4 +15,8 @@ class Def
     @id = attributes.fetch(:id) || @@total_rows += 1
     @timestamp = Time.new()
   end
+
+  def self.all
+    @@definitions.values
+  end
 end
