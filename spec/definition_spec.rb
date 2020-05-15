@@ -81,4 +81,10 @@ describe '#Def' do
       expect(Def.sort()).to(eq([@def]))
     end
   end
+
+  describe('.find_by_word')do
+    it("finds the definitions for each word")do
+      expect(Def.find_by_word(@word.id).to(eq([@def]))
+    end
+  end
 end
