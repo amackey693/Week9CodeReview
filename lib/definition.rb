@@ -46,4 +46,9 @@ class Def
   def delete()
     @@definitions.delete(self.id)
   end
+
+  def self.sort
+    Def.all.sort_by{|d| d.timestamp}
+  end
+    
 end
