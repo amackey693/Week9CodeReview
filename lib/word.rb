@@ -7,7 +7,7 @@ class Word
   @@total_rows = 0
 
   def initialize(attributes)
-    @word = attributes.fetch(:word)
+    @word = attributes.fetch(:word).downcase
     @id = attributes.fetch(:id) || @@total_rows += 1
   end
 
@@ -41,4 +41,15 @@ class Word
     @@words.delete(self.id)
   end
 
+  def self.search(search)
+    search = search.downcase
+    words = Word.all.map {|w| w.word }
+    result = []
+    all_words = words.grep(/#{search}/)
+    all_words.each do |a| 
+      match = Word.all.select {|w| w.word.include?(a)}
+      result.concat(match)
+    end
+    result
+  end
 end

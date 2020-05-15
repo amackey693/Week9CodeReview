@@ -16,7 +16,7 @@ describe '#Word' do
   describe('#initialize') do
     it('creates a hash with attributes') do
       word1 = Word.new({:word => "Cat", :id => nil})
-      expect(word1.word).to(eq("Cat"))
+      expect(word1.word).to(eq("cat"))
     end  
   end
 
