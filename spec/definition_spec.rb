@@ -87,4 +87,10 @@ describe '#Def' do
       expect(Def.find_by_word(@word.id)).to(eq([@def]))
     end
   end
+
+  describe('#word')do
+    it("finds the word a definition belongs to")do
+      expect(@def.word()).to(eq(@word))
+    end
+  end
 end

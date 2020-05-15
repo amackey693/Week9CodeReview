@@ -21,7 +21,7 @@ class Def
   end
 
   def save
-    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id, :word_id => self.word_id})
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
   end
 
   def ==(def_to_compare)
@@ -36,7 +36,7 @@ class Def
 
   def update(definition)
     self.definition = definition
-    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id, :word_id => self.word_id})
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
   end
 
   def self.find(id)
