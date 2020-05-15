@@ -33,4 +33,12 @@ class Def
     @@total_rows = 0
   end
 
+
+  def update(definition)
+    self.definition = definition
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
+  end
+
+
+
 end
