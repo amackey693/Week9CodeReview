@@ -8,7 +8,9 @@ describe '#Word' do
   before(:each) do
     Word.clear()
     @word = Word.new({:word => "Cat", :id => nil})
+    @word.save()
     @word1 = Word.new({:word => "Color", :id => nil})
+    @word1.save()
   end
  
   describe('#initialize') do
@@ -20,12 +22,14 @@ describe '#Word' do
 
   describe('.all') do 
     it("is empty at first") do
+      Word.clear()
       expect(Word.all()).to(eq([]))
     end
   end
 
   describe('#save') do 
     it("saves a word") do
+      Word.clear()
       word1 = Word.new({:word => "Cat", :id => nil})
       word1.save()
       expect(Word.all()).to(eq([word1]))
