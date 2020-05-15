@@ -27,4 +27,9 @@ class Def
   def ==(def_to_compare)
     (self.definition() == def_to_compare.definition()) && (self.word_id() == def_to_compare.word_id())
   end
+
+  def self.clear 
+    @@definitions = {}
+    @@total_rows = 0
+  end
 end
