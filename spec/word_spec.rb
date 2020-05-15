@@ -21,9 +21,7 @@ describe '#Word' do
     it("saves a word") do
       word1 = Word.new({:word => "Cat", :id => nil})
       word1.save()
-      word2 = Word.new({:word => "Dog", :id => nil})
-      word2.save()
-      expect(Word.all()).to(eq([word1, word2]))
+      expect(Word.all()).to(eq([word1]))
     end
   end
 
