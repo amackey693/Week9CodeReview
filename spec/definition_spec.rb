@@ -25,5 +25,14 @@ describe '#Def' do
     end
   end
 
+  describe('#==')do
+    it('is the same definition if it has the same attributes as another definition')do
+      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+      def1.save()
+      def2 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+      def2.save()
+      expect(def1).to(eq(def2))
+    end
+  end
 
 end
