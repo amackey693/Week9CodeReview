@@ -43,6 +43,7 @@ class Def
     @@definitions[id] 
   end
 
-
-
+  def delete()
+    @@definitions.delete(self.id)
+  end
 end

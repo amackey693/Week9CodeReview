@@ -68,6 +68,14 @@ describe '#Def' do
   end
 
 
+  describe('#delete') do
+    it("deletes a definition") do
+      @def.delete()
+      expect(Def.all()).to(eq([]))
+    end
+  end
+
+
 
 
 end
