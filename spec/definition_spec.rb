@@ -1,5 +1,6 @@
 require 'rspec'
 require 'definition'
+require 'word'
 require 'pry'
 
 describe '#Def' do
@@ -9,4 +10,12 @@ describe '#Def' do
       expect(def1.definition).to(eq("a definition here"))
     end
   end
+
+  describe('.all') do 
+    it("is empty at first") do
+      expect(Def.all()).to(eq([]))
+    end
+  end
+
+
 end
