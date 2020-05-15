@@ -11,7 +11,7 @@ class Def
   def initialize(attributes)
     @definition = attributes.fetch(:definition)
     @author = attributes.fetch(:author)
-    @word_id = word_id
+    @word_id = @word_id
     @id = attributes.fetch(:id) || @@total_rows += 1
     @timestamp = Time.new()
   end
@@ -21,7 +21,7 @@ class Def
   end
 
   def save
-    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id, :word_id => self.word_id})
   end
 
   def ==(def_to_compare)
@@ -36,7 +36,7 @@ class Def
 
   def update(definition)
     self.definition = definition
-    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id, :word_id => self.word_id})
   end
 
   def self.find(id)

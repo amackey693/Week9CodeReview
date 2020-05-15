@@ -10,7 +10,7 @@ describe '#Def' do
     Def.clear()
     @word = Word.new({:word => "Cat", :id => nil})
     @word.save()
-    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil, :word_id => @word.id })
     @def.save()
   end
 
@@ -39,9 +39,9 @@ describe '#Def' do
 
   describe('#==')do
     it('is the same definition if it has the same attributes as another definition')do
-      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil,  :word_id => @word.id})
       def1.save()
-      def2 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+      def2 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil, :word_id => @word.id })
       def2.save()
       expect(def1).to(eq(def2))
     end
@@ -81,8 +81,4 @@ describe '#Def' do
       expect(Def.sort()).to(eq([@def]))
     end
   end
-
-
-
-
 end
