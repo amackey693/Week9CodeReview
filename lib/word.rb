@@ -27,4 +27,10 @@ class Word
     @@words = {}
     @@total_rows = 0
   end
+
+  def update(word)
+    self.word = word
+    @@words[self.id] = Word.new({:word => self.word, :id => self.id})
+  end
+
 end

@@ -4,7 +4,14 @@ require 'pry'
 
 
 describe '#Word' do
- describe('#initialize') do
+  
+  before(:each) do
+    Word.clear()
+    @word = Word.new({:word => "Cat", :id => nil})
+    @word1 = Word.new({:word => "Color", :id => nil})
+  end
+ 
+  describe('#initialize') do
     it('creates a hash with attributes') do
       word1 = Word.new({:word => "Cat", :id => nil})
       expect(word1.word).to(eq("Cat"))
@@ -42,7 +49,7 @@ describe '#Word' do
 
   describe('#update') do
     it("updates a word by id") do
-     @word.update("Bird", nil)
+     @word.update("Bird")
      expect(@word.word).to(eq("Bird"))
     end
   end
