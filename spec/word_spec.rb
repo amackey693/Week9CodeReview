@@ -40,6 +40,12 @@ describe '#Word' do
     end
   end
 
+  describe('#update') do
+    it("updates a word by id") do
+     @word.update("Bird", nil)
+     expect(@word.word).to(eq("Bird"))
+    end
+  end
   
 
 end
