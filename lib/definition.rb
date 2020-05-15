@@ -39,6 +39,10 @@ class Def
     @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
   end
 
+  def self.find(id)
+    @@definitions[id] 
+  end
+
 
 
 end
