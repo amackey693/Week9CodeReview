@@ -1,10 +1,30 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word')
+# require('./lib/definition')
 require('pry')
 also_reload('lib/**/*.rb')
 
+get('/')do
+  @words = Word.all
+  erb(:home)
+end
 
+get('/home')do
+  @words = Word.all
+  erb(:home)
+end
+
+get('/home/new')do
+ erb(:new_word) 
+end
+
+post('/home/new')do
+  new_word = params[:new_word]
+  word = Word.new({:word => new_word, :id => nil})
+  word.save()
+  redirect to('/home')
+end
 # EXAMPLES FOR GET, POST, PATCH & DELETE
 # get('/') do
 #   @albums = Album.sort
