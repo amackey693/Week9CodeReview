@@ -13,7 +13,7 @@ describe '#Def' do
     @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
     @def.save()
   end
-  
+
   describe('#initialize')do
     it('creates a hash with attributes')do
       def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
@@ -51,6 +51,13 @@ describe '#Def' do
     it("clears all definitions")do
       Def.clear()
       expect(Def.all).to(eq([]))
+    end
+  end
+
+  describe('#update') do
+    it("updates a definition by id") do
+     @def.update("Bird")
+     expect(@def.definition).to(eq("Bird"))
     end
   end
 

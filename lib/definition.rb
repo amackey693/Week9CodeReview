@@ -32,4 +32,5 @@ class Def
     @@definitions = {}
     @@total_rows = 0
   end
+
 end
