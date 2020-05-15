@@ -58,6 +58,6 @@ class Word
   end
 
   def definitions
-    Def.find_by_album(self.id)
+    Def.find_by_word(self.id)
   end
 end

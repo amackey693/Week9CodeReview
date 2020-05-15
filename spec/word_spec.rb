@@ -7,10 +7,13 @@ describe '#Word' do
   
   before(:each) do
     Word.clear()
+    Def.clear()
     @word = Word.new({:word => "Cat", :id => nil})
     @word.save()
     @word1 = Word.new({:word => "Color", :id => nil})
     @word1.save()
+    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil, :word_id => @word.id})
+    @def.save()
   end
  
   describe('#initialize') do
@@ -80,6 +83,12 @@ describe '#Word' do
   describe('#sort')do
     it("sorts words alphebetically")do
       expect(Word.sort()).to(eq([@word, @word1]))
+    end
+  end
+
+  describe('#definitions')do
+    it("finds the definition that belongs to the word")do
+      expect(@word.definitions()).to(eq([@def]))
     end
   end
   
