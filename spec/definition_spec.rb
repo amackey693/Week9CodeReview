@@ -17,7 +17,7 @@ describe '#Def' do
     end
   end
 
-  decribe('#save') do
+  describe('#save') do
     it("saves a definition")do
      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
      def1.save()

@@ -20,6 +20,11 @@ class Def
     @@definitions.values
   end
 
+  def save
+    @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
+  end
 
-
+  def ==(def_to_compare)
+    (self.definition() == def_to_compare.definition()) && (self.word_id() == def_to_compare.word_id())
+  end
 end
