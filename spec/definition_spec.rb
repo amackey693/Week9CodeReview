@@ -35,4 +35,12 @@ describe '#Def' do
     end
   end
 
+  describe('.clear')do
+    it("clears all definitions")do
+      Def.clear()
+      expect(Def.all).to(eq([]))
+    end
+  end
+
+
 end
