@@ -4,6 +4,16 @@ require 'word'
 require 'pry'
 
 describe '#Def' do
+
+  before(:each) do
+    Word.clear()
+    Def.clear()
+    @word = Word.new({:word => "Cat", :id => nil})
+    @word.save()
+    @def = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+    @def.save()
+  end
+  
   describe('#initialize')do
     it('creates a hash with attributes')do
       def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
@@ -13,12 +23,14 @@ describe '#Def' do
 
   describe('.all') do 
     it("is empty at first") do
+      Def.clear()
       expect(Def.all()).to(eq([]))
     end
   end
 
   describe('#save') do
     it("saves a definition")do
+     Def.clear()
      def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
      def1.save()
      expect(Def.all).to(eq([def1]))
@@ -41,6 +53,8 @@ describe '#Def' do
       expect(Def.all).to(eq([]))
     end
   end
+
+
 
 
 end
