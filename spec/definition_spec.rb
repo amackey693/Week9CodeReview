@@ -75,6 +75,13 @@ describe '#Def' do
     end
   end
 
+  # can't test accordingly because all items are created at the same time. 
+  describe('#sort') do
+    it("sorts definitions by timestamp")do
+      expect(Def.sort()).to(eq(@def))
+    end
+  end
+
 
 
 
