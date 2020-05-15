@@ -26,6 +26,19 @@ post('/home/new') do
   redirect to('/home')
 end
 
+get('/home/:id') do
+  @word = Word.find(params[:id].to_i())
+end
+
+post('/home/:id/definition') do
+  @word = Word.find(params[:id].to_i())
+  define = params[:define]
+  author = params[:author]
+  new_definition = Def.new({:definition => define, :author => author, :word_id => nil, :id => nil})
+  new_definition.save()
+  erb(:view)
+end
+
 # make an admin only routing page for delete/renaming!
 get('/home/edit/:id') do
   @word = Word.find(params[:id].to_i())
@@ -37,9 +50,6 @@ get('/home/view/:id') do
   erb(:view)
 end
 
-get('/home/:id') do
-  @word = Word.find(params[:id].to_i())
-end
 
 patch('/home/:id') do
   @word = Word.find(params[:id].to_i())
@@ -54,17 +64,5 @@ delete('/home/:id') do
   redirect to('/home')
 end
 
-#definitions routing
-get('/home/:id/definition') do
-  @word = Word.find(params[:id].to_i())
-  erb(:view)
-end
 
-post('/home/:id/definition') do
-  @word = Word.find(params[:id].to_i())
-  definition = params[:definition]
-  author = params[:author]
-  new_definition = Def.new({:definition => definition, :author => author, :word_id => @word.id, :id => nil})
-  new_definition.save()
-  redirect to('/home/view/:id')
-end
+
