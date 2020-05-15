@@ -25,6 +25,14 @@ describe '#Word' do
     end
   end
 
+  decribe('#==')do
+    it("is the same word if it has the same attributes as another word")do
+    word1 = Word.new({:word => "Cat", :id => nil})
+    word2 = Word.new({:word => "Cat", :id => nil})
+     expect(word1).to(eq(word2))
+    end
+  end
+
   
 
 end
