@@ -76,7 +76,12 @@ describe '#Word' do
     expect(Word.search("C")).to(eq([@word, @word1]))
     end
   end
-
+  
+  describe('#sort')do
+    it("sorts words alphebetically")do
+      expect(Word.sort()).to(eq([@word, @word1]))
+    end
+  end
 end
 
 
