@@ -90,7 +90,7 @@ describe '#Def' do
 
   describe('#word')do
     it("finds the word a definition belongs to")do
-      expect(@def.word()).to(eq(@word))
+      expect(@def.get_words()).to(eq(@word))
     end
   end
 end

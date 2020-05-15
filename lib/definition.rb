@@ -1,5 +1,4 @@
 require 'pry'
-require 'word'
 
 class Def
   attr_reader :id, :timestamp
@@ -60,7 +59,7 @@ class Def
     end
   end
 
-  def word
+  def get_words
     Word.find(self.word_id)
   end
 end

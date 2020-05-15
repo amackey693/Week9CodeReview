@@ -1,1 +1,27 @@
-<h1>Word: <%= @word.word %> </h1>
+
+
+<% if @word.definitions %> 
+  <% @word.definitions.each do |d| %>
+  <p>Definition: <%=d.definition %></p>
+  <footer>Written By: <%=d.author %></footer>
+  <% end %>
+binding.pry
+
+<% else %> 
+  <p>It doesn't look like anyone has written a definition yet! Why don't you add one?</p>
+<% end %>
+
+
+<h3>Add a definition of your own!</h3>
+
+<form action="/home/<%= @word.id %>/definition" method="post">
+  <div class="form-group">
+    <input id="definition" name="definition" class="form-control" type="text" placeholder="Enter your definition">
+    <br>
+    <input id="author" name="author" class="form-control" type="text" placeholder="Enter your name">
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+<br>
+
+<p><a href="/home">Return to the homepage!!</a></p>

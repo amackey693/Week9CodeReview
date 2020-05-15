@@ -57,7 +57,7 @@ class Word
     Word.all.sort_by{|w| w.word}
   end
 
-  def definitions
+  def get_definitions
     Def.find_by_word(self.id)
   end
 end
