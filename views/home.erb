@@ -1,11 +1,11 @@
 <h1>Welcome to Word Finder!</h1>
 
 <% if @words.any? %>
-<ul>
+
   <% @words.each do |word| %>
-    <li><a href="/home/<%=word.id%>"> <%=word.word%> </a> <li>
+    <p><a href="/home/view/<%=word.id%>"> <%=word.word%> </a></p>
   <% end %>
-</ul>
+
 <% else %>
   <p>There are currently no words to display!</p>
 <% end %>

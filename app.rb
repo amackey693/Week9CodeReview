@@ -6,12 +6,12 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get('/')do
-  @words = Word.all
+  @words = Word.sort
   erb(:home)
 end
 
 get('/home')do
-  @words = Word.all
+  @words = Word.sort
   erb(:home)
 end
 
@@ -25,6 +25,37 @@ post('/home/new')do
   word.save()
   redirect to('/home')
 end
+
+# make an admin only routing page for delete/renaming!
+get('/home/edit/:id')do
+  @word = Word.find(params[:id].to_i())
+  erb(:admin_edit_word)
+end
+
+get('/home/view/:id')do
+  @word = Word.find(params[:id].to_i())
+  erb(:view)
+end
+
+get('/home/:id')do
+  @word = Word.find(params[:id].to_i())
+end
+
+patch('/home/:id')do
+  @word = Word.find(params[:id].to_i())
+  @words = Word.all
+  @word.update(params[:rename])
+  redirect to('/home')
+end
+
+delete('/home/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/home')
+end
+
+
+
 # EXAMPLES FOR GET, POST, PATCH & DELETE
 # get('/') do
 #   @albums = Album.sort
