@@ -10,6 +10,12 @@ describe '#Word' do
       expect(word1.word).to(eq("Cat"))
     end  
   end
+
+  describe('.all') do 
+    it("is empty at first") do
+      expect(Word.all()).to(eq([]))
+    end
+  end
 end
 
 
