@@ -17,5 +17,13 @@ describe '#Def' do
     end
   end
 
+  decribe('#save') do
+    it("saves a definition")do
+     def1 = Def.new({ :definition =>"a definition here", :author => "johnny ", :id => nil })
+     def1.save()
+     expect(Def.all).to(eq([def1]))
+    end
+  end
+
 
 end
