@@ -61,6 +61,12 @@ describe '#Def' do
     end
   end
 
+  describe('.find') do
+    it("finds a definition by id") do
+      expect(Def.find(@def.id)).to(eq(@def))
+    end
+  end
+
 
 
 
