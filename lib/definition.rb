@@ -51,6 +51,12 @@ class Def
     Def.all.sort_by{|d| d.timestamp}
   end
 
- 
-
+  def self.find_by_word(word_id)
+    definitions = []
+    @@definitions.values.each do |d|
+      if d.word_id == word_id
+        definitions.push(d)
+      end
+    end
+  end
 end

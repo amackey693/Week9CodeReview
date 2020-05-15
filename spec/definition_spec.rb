@@ -84,7 +84,7 @@ describe '#Def' do
 
   describe('.find_by_word')do
     it("finds the definitions for each word")do
-      expect(Def.find_by_word(@word.id).to(eq([@def]))
+      expect(Def.find_by_word(@word.id)).to(eq([@def]))
     end
   end
 end
