@@ -3,7 +3,7 @@
 <% if @words.any? %>
 
   <% @words.each do |word| %>
-    <p><a href="/home/view/<%=word.id%>"> <%=word.word%> </a></p>
+    <p><a href="/home/<%=word.id%>"> <%=word.word%> </a></p>
   <% end %>
 
 <% else %>

@@ -28,6 +28,7 @@ end
 
 get('/home/:id') do
   @word = Word.find(params[:id].to_i())
+  erb(:view)
 end
 
 post('/home/:id/definition') do
