@@ -37,7 +37,11 @@ Stretch Goals
 
 ## Known Bugs
 
+<<<<<<< HEAD
 _No known bugs at this time_
+=======
+_Bug with updating & delete method in definitions. Issues with Git on Friday, please view new-branch for current work! thanks_
+>>>>>>> 9d7caa81f2de4bbc49f266cfb68ede9d16eaf682
 
 ## Support and contact details
 
@@ -51,4 +55,8 @@ _Ruby, Gem, Pry_
 ### Licenses
 *MIT LICENSE*
 
+<<<<<<< HEAD
 Copyright (c) 2020 **_Allison Mackey_**
+=======
+Copyright (c) 2020 **_Allison Mackey_**
+>>>>>>> 9d7caa81f2de4bbc49f266cfb68ede9d16eaf682
