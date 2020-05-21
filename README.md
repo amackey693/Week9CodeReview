@@ -23,13 +23,13 @@ _This application will allow the user to enter in a word and create the definiti
 
 |   Behavior Description        |
 |-------------------------------|
-| 1. Displays all words on landing page []|
-| 2. Allows user to enter in a word []|
-| 3. Allows user to write & add a definition for the word []|
-| 4. Allows user to delete a definition []|
-| 5. Allows user to update definition   []|
-| 6.  []|
-| 7.  []|
+| 1. Displays all words on landing page [X]|
+| 2. Allows user to enter in a word [X]|
+| 3. Allows user to write & add a definition for the word [X]|
+| 4. Allows user to delete a definition [X]|
+| 5. Allows user to update definition   [X]|
+| 6. Allows admin to delete a word []|
+| 7. Allows admin to update a word []|
 
 Stretch Goals
 - checks if word is a real word 
@@ -37,11 +37,7 @@ Stretch Goals
 
 ## Known Bugs
 
-<<<<<<< HEAD
 _No known bugs at this time_
-=======
-_Bug with updating & delete method in definitions. Issues with Git on Friday, please view new-branch for current work! thanks_
->>>>>>> 9d7caa81f2de4bbc49f266cfb68ede9d16eaf682
 
 ## Support and contact details
 
@@ -55,8 +51,4 @@ _Ruby, Gem, Pry_
 ### Licenses
 *MIT LICENSE*
 
-<<<<<<< HEAD
 Copyright (c) 2020 **_Allison Mackey_**
-=======
-Copyright (c) 2020 **_Allison Mackey_**
->>>>>>> 9d7caa81f2de4bbc49f266cfb68ede9d16eaf682
