@@ -56,7 +56,7 @@ describe '#Def' do
 
   describe('#update') do
     it("updates a definition by id") do
-     @def.update("Bird")
+     @def.update("Bird", @word.id)
      expect(@def.definition).to(eq("Bird"))
     end
   end

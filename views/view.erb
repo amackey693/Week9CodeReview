@@ -2,7 +2,7 @@
 
 <% if @word.get_definitions %> 
   <% @word.get_definitions.each do |d| %>
-    <p>"<%= d.definition %>" By: <%= d.author %> <em><a href="/edit/<%=d.id%>">edit</a><em></p>
+    <p>"<%= d.definition %>" By: <%= d.author %> | <a href='/home/<%= d.get_words.id %>/definitions/<%= d.id %>'>edit</a></p>
   <% end %>
 <% else %> 
   <p>It doesn't look like anyone has written a definition yet! Why don't you add one?</p>
