@@ -10,7 +10,7 @@ _This application will allow the user to enter in a word and create the definiti
 
 ## Setup/Installation Requirements
 
-* _View this Repository Here on Heroku: https://git.heroku.com/aqueous-sea-09532.git_
+* _View this Repository Here on Heroku: https://aqueous-sea-09532.herokuapp.com/_
 * _Clone Repository from GitHub :  https://github.com/amackey693/Week9CodeReview.git_
 * _Open folder in Virtual Studio Code (or your text editor of choice)_
 * _Open your terminal & use the command _code ._ this will open all files associated with this app. 
