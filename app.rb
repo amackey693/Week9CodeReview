@@ -63,24 +63,27 @@ end
 
 
 # make an admin only routing page for delete/renaming!
-# get('/home/edit/:id') do
-#   @word = Word.find(params[:id].to_i())
-#   erb(:edit_word)
-# end
+get('/admin/edit') do
+  @words = Word.sort
+  erb(:admin)
+end
 
+get('/admin/edit/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
 
-# patch('/home/:id') do
-#   @word = Word.find(params[:id].to_i())
-#   @words = Word.all
-#   @word.update(params[:rename], @board.id)
-#   redirect to('/home')
-# end
+patch('/admin/edit/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:rename])
+  redirect to('/admin/edit')
+end
 
-# delete('/home/:id') do
-#   @word = Word.find(params[:id].to_i())
-#   @word.delete()
-#   redirect to('/home')
-# end
+delete('/admin/edit/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/admin/edit')
+end
 
 
 

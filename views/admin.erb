@@ -1,0 +1,15 @@
+<h1>Admin Editing Page</h1>
+
+
+
+<% if @words.any? %>
+
+  <% @words.each do |word| %>
+    <p><a href="/admin/edit/<%=word.id%>"> <%=word.word%> </a></p>
+  <% end %>
+
+<% else %>
+  <p>There are currently no words to display!</p>
+<% end %>
+
+<p><a href="/home">Return to the homepage!!</a></p>

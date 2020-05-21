@@ -3,7 +3,7 @@
 <h1>Word: <%= @word.word %> </h1>
 
 <%# UPDATE METHOD %>
-<form action="/home/<%= @word.id %>" method="post">
+<form action="/admin/edit/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="rename">Rename word</label>
   <input id="rename" name="rename" type="text">
@@ -11,7 +11,7 @@
 </form>
 
 <%# DELETE METHOD %>
-<form action="/home/<%= @word.id %>" method="post">
+<form action="/admin/edit/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete Word</button>
 </form>
