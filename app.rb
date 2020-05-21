@@ -50,7 +50,7 @@ end
 patch('/home/:id/definitions/:def_id') do
   @word = Word.find(params[:id].to_i())
   @def = Def.find(params[:def_id].to_i())
-  @def.update(params[:redefine], @word.id)
+  @def.update(params[:redefine])
   erb(:view)
 end
 
@@ -63,24 +63,24 @@ end
 
 
 # make an admin only routing page for delete/renaming!
-get('/home/edit/:id') do
-  @word = Word.find(params[:id].to_i())
-  erb(:edit_word)
-end
+# get('/home/edit/:id') do
+#   @word = Word.find(params[:id].to_i())
+#   erb(:edit_word)
+# end
 
 
-patch('/home/:id') do
-  @word = Word.find(params[:id].to_i())
-  @words = Word.all
-  @word.update(params[:rename])
-  redirect to('/home')
-end
+# patch('/home/:id') do
+#   @word = Word.find(params[:id].to_i())
+#   @words = Word.all
+#   @word.update(params[:rename], @board.id)
+#   redirect to('/home')
+# end
 
-delete('/home/:id') do
-  @word = Word.find(params[:id].to_i())
-  @word.delete()
-  redirect to('/home')
-end
+# delete('/home/:id') do
+#   @word = Word.find(params[:id].to_i())
+#   @word.delete()
+#   redirect to('/home')
+# end
 
 
 

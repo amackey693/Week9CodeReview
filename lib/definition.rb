@@ -36,6 +36,7 @@ class Def
   def update(definition, word_id)
     self.definition = definition
     self.word_id = word_id
+    # self.word_id = word_id
     @@definitions[self.id] = Def.new({:definition => self.definition, :author => self.author, :word_id => self.word_id, :id => self.id})
   end
 
@@ -58,6 +59,7 @@ class Def
         definitions.push(d)
       end
     end
+    definitions
   end
 
   def get_words
