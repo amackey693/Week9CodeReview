@@ -10,7 +10,7 @@ _This application will allow the user to enter in a word and create the definiti
 
 ## Setup/Installation Requirements
 
-* _View this Repository Here on Heroku: (insert a link)_
+* _View this Repository Here on Heroku: https://git.heroku.com/aqueous-sea-09532.git_
 * _Clone Repository from GitHub :  https://github.com/amackey693/Week9CodeReview.git_
 * _Open folder in Virtual Studio Code (or your text editor of choice)_
 * _Open your terminal & use the command _code ._ this will open all files associated with this app. 
@@ -28,8 +28,8 @@ _This application will allow the user to enter in a word and create the definiti
 | 3. Allows user to write & add a definition for the word [X]|
 | 4. Allows user to delete a definition [X]|
 | 5. Allows user to update definition   [X]|
-| 6. Allows admin to delete a word []|
-| 7. Allows admin to update a word []|
+| 6. Allows admin to delete a word [X]|
+| 7. Allows admin to update a word [X]|
 
 Stretch Goals
 - checks if word is a real word 
