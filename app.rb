@@ -63,8 +63,6 @@ end
 
 
 # make an admin only routing page for delete/renaming!
-
-
 get('/admin/login')do
   erb(:admin_login)
 end
@@ -84,6 +82,11 @@ end
 get('/admin/edit') do
   @words = Word.sort
   erb(:admin)
+end
+
+get('/admin/edit/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
 end
 
 patch('/admin/edit/:id') do
