@@ -1,6 +1,6 @@
  <h1> <%= @word.word %></h1>
 
-<% if @word.get_definitions %> 
+<% if @word.get_definitions.any? %> 
   <% @word.get_definitions.each do |d| %>
     <p>"<%= d.definition %>" By: <%= d.author %> | <a href='/home/<%= d.get_words.id %>/definitions/<%= d.id %>'>edit</a></p>
   <% end %>
