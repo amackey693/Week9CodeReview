@@ -8,6 +8,8 @@
 
 _This application will allow the user to enter in a word and create the definition for that particular word._ 
 
+_Enter username "admin" & password "admin" to edit/delete words!_
+
 ## Setup/Installation Requirements
 
 * _View this Repository Here on Heroku: https://aqueous-sea-09532.herokuapp.com/_
