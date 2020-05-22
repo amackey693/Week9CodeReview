@@ -72,10 +72,8 @@ post('/admin/login')do
   password = params[:password]
   if username == "admin" && password == "admin"
     redirect to('/admin/edit')
-  elsif username != "admin" && password != "admin"
-    erb(:error)
   else
-    redirect to('/home')
+    erb(:error)
   end
 end
 
